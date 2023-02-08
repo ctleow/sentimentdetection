@@ -1,0 +1,113 @@
+{
+  "description": "A New Flow",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "trigger",
+      "transitions": [
+        {
+          "next": "SentimentAnalysis",
+          "event": "incomingMessage"
+        },
+        {
+          "event": "incomingCall"
+        },
+        {
+          "event": "incomingConversationMessage"
+        },
+        {
+          "event": "incomingRequest"
+        },
+        {
+          "event": "incomingParent"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "name": "Negative",
+      "type": "send-message",
+      "transitions": [
+        {
+          "event": "sent"
+        },
+        {
+          "event": "failed"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": -300,
+          "y": 440
+        },
+        "service": "{{trigger.message.InstanceSid}}",
+        "channel": "{{trigger.message.ChannelSid}}",
+        "from": "{{flow.channel.address}}",
+        "to": "{{contact.channel.address}}",
+        "body": "Hi your text contains negative sentiment!"
+      }
+    },
+    {
+      "name": "Positive",
+      "type": "send-message",
+      "transitions": [
+        {
+          "event": "sent"
+        },
+        {
+          "event": "failed"
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 40,
+          "y": 440
+        },
+        "service": "{{trigger.message.InstanceSid}}",
+        "channel": "{{trigger.message.ChannelSid}}",
+        "from": "{{flow.channel.address}}",
+        "to": "{{contact.channel.address}}",
+        "body": "Hi your text contains positive sentiment!"
+      }
+    },
+    {
+      "name": "SentimentAnalysis",
+      "type": "run-function",
+      "transitions": [
+        {
+          "next": "Negative",
+          "event": "success"
+        },
+        {
+          "next": "Positive",
+          "event": "fail"
+        }
+      ],
+      "properties": {
+        "service_sid": "ZSf27a64a92b32bd3ff7e3c5702d4d87db",
+        "environment_sid": "ZEa96f872054993e572786d48354e0fe35",
+        "offset": {
+          "x": -60,
+          "y": 200
+        },
+        "function_sid": "ZH7b6550e9fb53c9c73acfc3c43635ede3",
+        "parameters": [
+          {
+            "value": "{{trigger.message.Body}}",
+            "key": "textMsg"
+          }
+        ],
+        "url": "<YOUR FUNCTION URL>"
+      }
+    }
+  ],
+  "initial_state": "Trigger",
+  "flags": {
+    "allow_concurrent_calls": true
+  }
+}
