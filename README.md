@@ -4,15 +4,37 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Table of Content
-
 - Solution Description
 - Business Value
 - Use Case & Industry
 - Products Involved
 - Architecture/Solution Diagram
-- Demo Setups
-- Demo Scripts
+- Demo Setup
+- Demo Script
 - Any other reference links
 
-[TOCM]
+
+## Solution Description
+
+
+## Business Value
+
+## Use Case & Industry
+
+## Products Involved
+- Twilio WhatsApp for Business API
+- Twilio Studio
+- Twilio Function
+- Google Sheets
+
+## Architecture/Solution Diagram
+![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/SolutionJourney.jpg)
+
+## Demo Setup
+
+## Demo Script
+
+## Any other reference links
+
+
 
