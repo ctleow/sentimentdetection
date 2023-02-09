@@ -5,13 +5,13 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 ## Table of Content
 - [Solution Description](#Solution-Description)
-- Business Value
-- Use Case & Industry
-- Products Involved
-- Architecture/Solution Diagram
-- Demo Setup
-- Demo Script
-- Any other reference links
+- [Architecture/Solution Diagram](#Architecture/Solution-Diagram)
+- [Business Value](#Business-Value)
+- [Use Case & Industry](#Use-Case-&-Industry)
+- [Products Involved](#Products-Involved)
+- [Demo Setup](#Demo-Setup)
+- [Demo Script](#Demo-Script)
+- [Any other reference links](#Any-other-reference-links)
 
 
 ## Solution Description
