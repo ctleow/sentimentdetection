@@ -25,9 +25,10 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 ![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/SolutionJourney.jpg)
 
 ## Business Value
-- _Improves customers engagement_ - as Brands now understand customer sentiment better
-- _Centralised Reporting_ - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful
-- _Ease of Use_ - Low maintainence, easy to manage and able to adjust to evolving business needs
+- **Improves customers engagement** - as Brands now understand customer sentiment better
+- **Centralised Reporting** - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful
+- **Ease of Use** - Low maintainence, easy to manage and able to adjust to evolving business needs
+- **Unlock endless opportunities** - Ability to do more by integrating with a NLP chatbot or other platforms to support more use cases!
 
 ## Use Case & Industry
 - Applicable to all B2C industries
