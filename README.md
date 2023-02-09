@@ -5,7 +5,7 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 ## Table of Content
 - [Solution Description](#Solution-Description)
-- [Architecture/Solution Diagram](#Architecture/Solution-Diagram)
+- [Architecture/Solution Diagram](#ArchitectureSolution-Diagram)
 - [Business Value](#Business-Value)
 - [Use Case & Industry](#Use-Case-&-Industry)
 - [Products Involved](#Products-Involved)
