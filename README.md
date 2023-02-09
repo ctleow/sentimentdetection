@@ -4,7 +4,7 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Table of Content
-- [Solution Description](#Solution Description)
+[Solution Description](#Solution Description)
 - Business Value
 - Use Case & Industry
 - Products Involved
