@@ -4,7 +4,7 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Table of Content
-[Solution Description](#Solution Description)
+- [Solution Description](#Solution Description)
 - Business Value
 - Use Case & Industry
 - Products Involved
@@ -14,7 +14,7 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 - Any other reference links
 
 
-## Solution Description
+## [Solution Description]
 Currently, Twilio does not have the ability to conduct sentiment analysis on the responses or inbound messages. As many brands is looking for ways to improve their customer engagement, sentiment analysis becomes increasing important especially when there is rising need to automate engagement, we need to take into account the customer's sentiment to provide amazing experiences. 
 
 So by leveraging the power of Twilio's ability to be programmable, this project seeks to empower our customers to add-on keyword based sentiment detection to all inbound messages. This means across all messaging channels, such as SMS and WhatsApp. 
