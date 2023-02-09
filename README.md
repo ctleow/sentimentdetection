@@ -4,7 +4,7 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Table of Content
-- Solution Description
+- [Solution Description](#Solution Description)
 - Business Value
 - Use Case & Industry
 - Products Involved
@@ -21,6 +21,8 @@ So by leveraging the power of Twilio's ability to be programmable, this project 
 
 The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
 
+## Architecture/Solution Diagram
+![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/SolutionJourney.jpg)
 
 ## Business Value
 - _Improves customers engagement_ - as Brands now understand customer sentiment better
@@ -40,8 +42,6 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 - Twilio Function
 - Google Sheets
 
-## Architecture/Solution Diagram
-![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/SolutionJourney.jpg)
 
 ## Demo Setup
 
