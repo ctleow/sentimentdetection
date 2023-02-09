@@ -15,11 +15,24 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Solution Description
+Currently, Twilio does not have the ability to conduct sentiment analysis on the responses or inbound messages. As many brands is looking for ways to improve their customer engagement, sentiment analysis becomes increasing important especially when there is rising need to automate engagement, we need to take into account the customer's sentiment to provide amazing experiences. 
+
+So by leveraging the power of Twilio's ability to be programmable, this project seeks to empower our customers to add-on keyword based sentiment detection to all inbound messages. This means across all messaging channels, such as SMS and WhatsApp. 
+
+The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
 
 
 ## Business Value
+- _Improves customers engagement_ - as Brands now understand customer sentiment better
+- _Centralised Reporting_ - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful
+- _Ease of Use_ - Low maintainence, easy to manage and able to adjust to evolving business needs
 
 ## Use Case & Industry
+- Applicable to all B2C industries
+- Enhance Automated customer service 
+- Compliance to local regulatory requirements
+- Can extend to voice if Text to Speech added
+
 
 ## Products Involved
 - Twilio WhatsApp for Business API
@@ -35,6 +48,6 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 ## Demo Script
 
 ## Any other reference links
-
+Google Sheets API: https://developers.google.com/sheets/api/guides/concepts#:~:text=The%20Google%20Sheets%20API%20is,Update%20spreadsheet%20formatting
 
 
