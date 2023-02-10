@@ -22,7 +22,7 @@ So by leveraging the power of Twilio's ability to be programmable, this project 
 The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
 
 ## Architecture/Solution Diagram
-![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/SolutionJourney.jpg)
+![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/img/solution-journey.png)
 
 ## Business Value
 - **Improves customers engagement** - as Brands now understand customer sentiment better
