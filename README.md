@@ -22,7 +22,7 @@ So by leveraging the power of Twilio's ability to be programmable, this project 
 The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
 
 ## Architecture/Solution Diagram
-![This is an image](https://github.com/ctleow/sentimentdetection/blob/main/img/solution-journey.png)
+![Solution Architecture](https://github.com/ctleow/sentimentdetection/blob/main/img/solution-journey.png)
 
 ## Business Value
 - **Improves customers engagement** - as Brands now understand customer sentiment better
@@ -47,6 +47,14 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 ## Demo Setup
 
 ## Demo Script
+| Demo Screen  | Talk Track |
+| ------------- | ------------- |
+| ![demo_screen1](https://github.com/ctleow/sentimentdetection/blob/main/img/1_demo.png) | We start off from the marketer's view whereby the marketer can use the Google Sheet to upload words that are considered to be negative sentiment. The "count" next to each word indicates the number of times such words appeared in the customer's responses. The benefit of this is that it's easy for business users to manage this without the need for IT team to support and it can also support other languages as well! |
+| ![demo_screen2](https://github.com/ctleow/sentimentdetection/blob/main/img/2_demo.png) | So let see how it will look like when a customer starts messaging into Owl Taxi. Here, a message has been sent to the WhatsApp Business Account of Owl Taxi. When Twilio receives the inbound message, it will do a lookup within Google Sheet to check if there is a match. This is currently on a "First Occurence" basis. As soon as there's a match, it will add the count by 1 and reply the customer that a negative sentiment has been detected  |
+| ![demo_screen3](https://github.com/ctleow/sentimentdetection/blob/main/img/3_demo.png) | In addition, Twilio will log this message down and this can be used for future analysis by Owl Taxi by feeding this to a analytics tool such as Tableau.  |
+| ![demo_screen4](https://github.com/ctleow/sentimentdetection/blob/main/img/4_demo.png) | The automated 2 way conversation is facilitated by Twilio Studio, which is a low/no code builder. When an inbound messages arrives, it routes to Twilio Function (I will touch on that in a second), which will run the logic to lookup in the Google Sheet and returns the result.  |
+| ![demo_screen5](https://github.com/ctleow/sentimentdetection/blob/main/img/5_demo.png) | Twilio Function is a serverless environment that allows customers to host programming logics on Twilio. In this case, I've built the logic to check for a keyword match from the Google Sheet before parsing the results back to Studio for a response  |
+
 
 ## Any other reference links
 Google Sheets API: https://developers.google.com/sheets/api/guides/concepts#:~:text=The%20Google%20Sheets%20API%20is,Update%20spreadsheet%20formatting
