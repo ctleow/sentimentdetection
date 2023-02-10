@@ -20,32 +20,33 @@ Currently, Twilio does not have the ability to conduct sentiment analysis on the
 So by leveraging the power of Twilio's ability to be programmable, this project seeks to empower our customers to add-on keyword based sentiment detection to all inbound messages. This means across all messaging channels, such as SMS and WhatsApp. 
 
 The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
-<br /><br />
+
+
 ## Architecture/Solution Diagram
 ![Solution Architecture](https://github.com/ctleow/sentimentdetection/blob/main/img/solution-journey.png)
 
-<br /><br />
+
 ## Business Value
 - **Improves customers engagement** - as Brands now understand customer sentiment better
 - **Centralised Reporting** - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful
 - **Ease of Use** - Low maintainence, easy to manage and able to adjust to evolving business needs
 - **Unlock endless opportunities** - Ability to do more by integrating with a NLP chatbot or other platforms to support more use cases!
 
-<br /><br />
+
 ## Use Case & Industry
 - Applicable to all B2C industries
 - Enhance Automated customer service 
 - Compliance to local regulatory requirements
 - Can extend to voice if Text to Speech added
 
-<br /><br />
+
 ## Products Involved
 - Twilio WhatsApp for Business API
 - Twilio Studio
 - Twilio Function
 - Google Sheets
 
-<br /><br />
+
 ## Demo Setup
 #### Prerequisites
 - A Google account (you can use AirTable if you want but this changes the integration code base)
@@ -54,7 +55,7 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 - Installed Twilio CLI & Twilio Serverless toolkit
 - Your **Account SID** and **Auth Token**, found in yuor Twilio account dashboard
 
-<br />
+
 #### Step 1: Setup service account for Google Sheet API
 - Go to the [Google APIs Console](https://console.developers.google.com/)
 - Create a new project
@@ -63,7 +64,7 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 - Name the service account and grant it a Project Role of Editor
 - Download the JSON file (keep it we will need it later)
 
-<br />
+
 #### Step 2: Create the Google Sheet
 - Create a gGoogle sheet and 2 tabs: **"Word Bank"** and **"Logs"**
 - For the **Word Bank** tab, create 2 columns: **"Words"** and **"Count"**
@@ -75,16 +76,16 @@ We need to give access to our service account to this sheet so we can use it thr
 
 Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 
-<br />
+
 #### Step 3: Download this repo 
 - Download this github repo into your local machine
 
-<br />
+
 #### Step 4: Setting up Credentials
 
-<WIP>
+- **Work In Progress**
 
-<br /><br />
+
 ## Demo Script
 | Demo Screen  | Talk Track |
 | ------------- | ------------- |
@@ -94,12 +95,12 @@ Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 | ![demo_screen4](https://github.com/ctleow/sentimentdetection/blob/main/img/4_demo.png) | The automated 2 way conversation is facilitated by Twilio Studio, which is a low/no code builder. When an inbound messages arrives, it routes to Twilio Function (I will touch on that in a second), which will run the logic to lookup in the Google Sheet and returns the result.  |
 | ![demo_screen5](https://github.com/ctleow/sentimentdetection/blob/main/img/5_demo.png) | Twilio Function is a serverless environment that allows customers to host programming logics on Twilio. In this case, I've built the logic to check for a keyword match from the Google Sheet before parsing the results back to Studio for a response  |
 
-<br /><br />
+
 ## Any other reference links
 - Google Sheets API: https://developers.google.com/sheets/api/guides/concepts#:~:text=The%20Google%20Sheets%20API%20is,Update%20spreadsheet%20formatting
 - Twilio CLI: https://www.twilio.com/docs/twilio-cli/quickstart
 - Twilio Serverless Toolkit: https://www.twilio.com/docs/labs/serverless-toolkit/getting-started#install-the-twilio-serverless-toolkit
 
-<br /><br />
+
 ## Credits to these blogs that helped me build this project!
-https://www.twilio.com/blog/community-sms-group-chat-twilio-functions-google-sheets
+- https://www.twilio.com/blog/community-sms-group-chat-twilio-functions-google-sheets
