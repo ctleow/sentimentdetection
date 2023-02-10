@@ -77,10 +77,10 @@ Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 
 #### Step 4: Setting up Credentials
 
+<WIP>
 
-
-
-
+:-
+:-
 
 ## Demo Script
 | Demo Screen  | Talk Track |
