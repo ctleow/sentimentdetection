@@ -45,6 +45,23 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 
 
 ## Demo Setup
+#### Prerequisites
+- A Google account (you can use AirTable if you want but this changes the integration code base)
+- A Twilio account
+- A Twilio phone number with WhatsApp Business Sender registered. (You can do this with SMS too!)
+- Installed Twilio CLI & Twilio Serverless toolkit
+- Your **Account SID** and **Auth Token**, found in yuor Twilio account dashboard
+
+### Step 1: Create the Google Sheet
+- Create a gGoogle sheet and 2 tabs: **"Word Bank"** and **"Logs"**
+- For the **Word Bank** tab, create 2 columns: **"Words"** and **"Count"**
+- For the **Logs** tab, create 2 columns: **"Word"** and **"TextMsg"**
+
+### Step 2: Download this repo 
+- Download this github repo into your local machine
+
+### Step 3: Download this repo 
+
 
 ## Demo Script
 | Demo Screen  | Talk Track |
@@ -58,5 +75,6 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 
 ## Any other reference links
 Google Sheets API: https://developers.google.com/sheets/api/guides/concepts#:~:text=The%20Google%20Sheets%20API%20is,Update%20spreadsheet%20formatting
-
+Twilio CLI: https://www.twilio.com/docs/twilio-cli/quickstart
+Twilio Serverless Toolkit: https://www.twilio.com/docs/labs/serverless-toolkit/getting-started#install-the-twilio-serverless-toolkit
 
