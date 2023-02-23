@@ -4,14 +4,14 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Table of Content
-- [Solution Description](#Solution-Description)
-- [Architecture/Solution Diagram](#ArchitectureSolution-Diagram)
-- [Business Value](#Business-Value)
+- [Solution Description](#solution-description)
+- [Architecture/Solution Diagram](#architecturesolution-diagram)
+- [Business Value](#business-value)
 - [Use Case & Industry](#use-case--industry)
-- [Products Involved](#Products-Involved)
-- [Demo Setup](#Demo-Setup)
-- [Demo Script](#Demo-Script)
-- [Any other reference links](#Any-other-reference-links)
+- [Products Involved](#products-involved)
+- [Demo Setup](#demo-setup)
+- [Demo Script](#demo-script)
+- [Any other reference links](#any-other-reference-links)
 
 
 ## Solution Description
@@ -68,6 +68,7 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 #### Step 2: Create the Google Sheet
 - Create a gGoogle sheet and 2 tabs: **"Word Bank"** and **"Logs"**
 - For the **Word Bank** tab, create 2 columns: **"Words"** and **"Count"**
+- Start building your word bank by inserting keywords. The solution is not case senstitive. Hence, feel free to simply insert the keywords!
 - For the **Logs** tab, create 2 columns: **"Word"** and **"TextMsg"**
 
 We need to give access to our service account to this sheet so we can use it through the API. Click the Share button and enter the client_email from the JSON file you downloaded earlier. We also need the sheet ID so that we can access it from the API. The ID is available in the URL of the sheet, the URL looks like this:
@@ -82,8 +83,24 @@ Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 
 
 #### Step 4: Setting up Credentials
+- Open up the .env file in the repo you just downloaded and include your Twilio Credentals and the GOOGLE_SPREADSHEET_KEY you saved earlier
+- Remember the JSON file at step 2 which continas the Google Sheet API credentials? We need to store that as a private asset in Twilio Function. Go into the assets folder, either copy and paste or replace the ```credentials.private.json```
 
-- **Work In Progress**
+
+#### Step 5: Time to deploy!
+- We will be using Twilio serverless Function to deploy and the command is just one line in the terminal! <br />```npm run deploy```
+- The functions and asset will be deployed to your Twilio Account (**pro-tip**: do make sure you have configure your Twilio CLI proper and using the right profile!)
+
+
+#### Step 5: Upload the Studio Workflow
+- Go to Twilio Studio and create a new flow (select import from JSON)
+- Paste the ```Example-Studio-Flow.json``` into the flow definition
+- Configure the ```SentimentAnalysis``` widget by pointing the Function URL to the Function you just deployed
+- If you're configuring WhatsApp messaging, please setup the webhook for your WhatsApp Sender to be pointing to the Studio Flow's Webhook URL which can be found in the Trigger widget
+
+
+#### Step 6: WOOOHOO! You're now ready to test! 
+- Try sending a WhatsApp messaging to the Twilio WhatsApp number and check if a postive or negative sentiment has been detected. Do also note if the detected keyword count has incremeted by 1 or if the Google Sheet logs down the word and message.
 
 
 ## Demo Script
