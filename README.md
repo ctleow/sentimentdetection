@@ -15,11 +15,11 @@ Hi! Welcome to this git repo. What this repo seeks to achieve is to help custome
 
 
 ## Solution Description
-Currently, Twilio does not have the ability to conduct sentiment analysis on the responses or inbound messages. As many brands is looking for ways to improve their customer engagement, sentiment analysis becomes increasing important especially when there is rising need to automate engagement, we need to take into account the customer's sentiment to provide amazing experiences. 
+Currently, Twilio does not have the ability to conduct sentiment analysis on the responses or inbound messages. As many brands is looking for ways to improve their customer engagement, sentiment analysis becomes increasing important especially when there is raising need to automate engagement. We need to take into account the customer's sentiment to provide top-notch experiences. 
 
-So by leveraging the power of Twilio's ability to be programmable, this project seeks to empower our customers to add-on keyword based sentiment detection to all inbound messages. This means across all messaging channels, such as SMS and WhatsApp. 
+By leveraging the power of Twilio's "programmability", this project seeks to empower our customers to add-on keyword based sentiment detection to all inbound messages. This includes all messaging channels, such as SMS, WhatsApp, FB Messenger, etc. 
 
-The "Word Bank" is maintained using Google Sheet which is widely accessiable to all customers. Everytime an inbound message comes in, the Twilio Function will check against the word bank for any occurance of keyword that represents a negative sentiment, and returns the result back to the Twilio Function and pass on into the Twilio Studio flow for further actions.
+The "Word Bank" is maintained using Google Sheet which is widely available to all our customers. When an inbound message arrives, Twilio Studio routes the message to a Twilio Function which will check against the word bank for any occurance of keyword that represents a negative sentiment. Once proceesed, the function returns the result back to Twilio Studio flow for further actions.
 
 
 ## Architecture/Solution Diagram
@@ -27,24 +27,24 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 
 
 ## Business Value
-- **Improves customers engagement** - as Brands now understand customer sentiment better
-- **Centralised Reporting** - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful
-- **Ease of Use** - Low maintainence, easy to manage and able to adjust to evolving business needs
+- **Improves customers engagement** - Brands now are able to understand customer sentiment better.
+- **Centralised Reporting** - In countries where brands are highly regulated to provide monthly sentiment report, this will be useful for reporting purposes.
+- **Ease of Use** - Low maintainence, easy to manage and able to adjust to evolving business & regulatory requirements.
 - **Unlock endless opportunities** - Ability to do more by integrating with a NLP chatbot or other platforms to support more use cases!
 
 
 ## Use Case & Industry
 - Applicable to all B2C industries
-- Enhance Automated customer service 
+- Enhanced Automated customer service 
 - Compliance to local regulatory requirements
-- Can extend to voice if Text to Speech added
+- Extensible to other channels such as voice (Text to Speech)
 
 
 ## Products Involved
 - Twilio WhatsApp for Business API
 - Twilio Studio
 - Twilio Function
-- Google Sheets
+- Google Sheets & API
 
 
 ## Demo Setup
@@ -66,16 +66,16 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 
 
 #### Step 2: Create the Google Sheet
-- Create a gGoogle sheet and 2 tabs: **"Word Bank"** and **"Logs"**
+- Create a Google sheet with 2 tabs: **"Word Bank"** and **"Logs"**
 - For the **Word Bank** tab, create 2 columns: **"Words"** and **"Count"**
-- Start building your word bank by inserting keywords. The solution is not case senstitive. Hence, feel free to simply insert the keywords!
+- Start building your word bank by inserting keywords. The solution ignores case senstitivity. Hence, feel free to simply insert the keywords!
 - For the **Logs** tab, create 2 columns: **"Word"** and **"TextMsg"**
 
 We need to give access to our service account to this sheet so we can use it through the API. Click the Share button and enter the client_email from the JSON file you downloaded earlier. We also need the sheet ID so that we can access it from the API. The ID is available in the URL of the sheet, the URL looks like this:
 
 ```https://docs.google.com/spreadsheets/d/{GOOGLE_SPREADSHEET_KEY}/edit```
 
-Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
+Grab the ```GOOGLE_SPREADSHEET_KEY``` from your URL and keep it safe too.
 
 
 #### Step 3: Download this repo 
@@ -83,7 +83,7 @@ Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 
 
 #### Step 4: Setting up Credentials
-- Open up the .env file in the repo you just downloaded and include your Twilio Credentals and the GOOGLE_SPREADSHEET_KEY you saved earlier
+- Open up the .env file in the repo you just downloaded and include your Twilio Credentals and the ```GOOGLE_SPREADSHEET_KEY``` you saved earlier
 - Remember the JSON file at step 2 which continas the Google Sheet API credentials? We need to store that as a private asset in Twilio Function. Go into the assets folder, either copy and paste or replace the ```credentials.private.json```
 
 
@@ -100,15 +100,15 @@ Grab the GOOGLE_SPREADSHEET_KEY from your URL and keep it safe too.
 
 
 #### Step 6: WOOOHOO! You're now ready to test! 
-- Try sending a WhatsApp messaging to the Twilio WhatsApp number and check if a postive or negative sentiment has been detected. Do also note if the detected keyword count has incremeted by 1 or if the Google Sheet logs down the word and message.
+- Try sending a WhatsApp messaging to the Twilio WhatsApp number and check if a postive or negative sentiment has been detected. Do take note if the detected keyword count has incremeted by 1 or if the Google Sheet logs down the word and message. If so, the solution is functioning properly! **Congratulations on setting up Sentiment Detection!** 
 
 
 ## Demo Script
 | Demo Screen  | Talk Track |
 | ------------- | ------------- |
-| ![demo_screen1](https://github.com/ctleow/sentimentdetection/blob/main/img/1_demo.png) | We start off from the marketer's view whereby the marketer can use the Google Sheet to upload words that are considered to be negative sentiment. The "count" next to each word indicates the number of times such words appeared in the customer's responses. The benefit of this is that it's easy for business users to manage this without the need for IT team to support and it can also support other languages as well! |
-| ![demo_screen2](https://github.com/ctleow/sentimentdetection/blob/main/img/2_demo.png) | So let see how it will look like when a customer starts messaging into Owl Taxi. Here, a message has been sent to the WhatsApp Business Account of Owl Taxi. When Twilio receives the inbound message, it will do a lookup within Google Sheet to check if there is a match. This is currently on a "First Occurence" basis. As soon as there's a match, it will add the count by 1 and reply the customer that a negative sentiment has been detected  |
-| ![demo_screen3](https://github.com/ctleow/sentimentdetection/blob/main/img/3_demo.png) | In addition, Twilio will log this message down and this can be used for future analysis by Owl Taxi by feeding this to a analytics tool such as Tableau.  |
+| ![demo_screen1](https://github.com/ctleow/sentimentdetection/blob/main/img/1_demo.png) | We'll start off from the marketer's view whereby the marketer can use the Google Sheet to upload words that are considered to be negative sentiment. The "count" next to each word indicates the number of times such words appeared in the customer's responses. The benefit of this is that it's easy for business users to manage this without the need for IT team to support and it can also support other languages as well! |
+| ![demo_screen2](https://github.com/ctleow/sentimentdetection/blob/main/img/2_demo.png) | So let's see how it will look like when a customer starts messaging into Owl Taxi. Here, a message has been sent to the WhatsApp Business Account of Owl Taxi. When Twilio receives the inbound message, it will do a look-up within Google Sheet to check if there is a match. This is currently on a "First Occurence" basis. As soon as there's a match, it will add the count by 1 and reply the customer that a negative sentiment has been detected  |
+| ![demo_screen3](https://github.com/ctleow/sentimentdetection/blob/main/img/3_demo.png) | In addition, Twilio will log this message down and this can be used for future analysis by Owl Taxi by feeding this to an analytics tool such as Tableau.  |
 | ![demo_screen4](https://github.com/ctleow/sentimentdetection/blob/main/img/4_demo.png) | The automated 2 way conversation is facilitated by Twilio Studio, which is a low/no code builder. When an inbound messages arrives, it routes to Twilio Function (I will touch on that in a second), which will run the logic to lookup in the Google Sheet and returns the result.  |
 | ![demo_screen5](https://github.com/ctleow/sentimentdetection/blob/main/img/5_demo.png) | Twilio Function is a serverless environment that allows customers to host programming logics on Twilio. In this case, I've built the logic to check for a keyword match from the Google Sheet before parsing the results back to Studio for a response  |
 
