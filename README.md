@@ -53,7 +53,7 @@ The "Word Bank" is maintained using Google Sheet which is widely accessiable to 
 - A Twilio account
 - A Twilio phone number with WhatsApp Business Sender registered. (You can do this with SMS too!)
 - Installed Twilio CLI & Twilio Serverless toolkit
-- Your **Account SID** and **Auth Token**, found in yuor Twilio account dashboard
+- Your **Account SID** and **Auth Token**, found in your Twilio account dashboard
 
 
 #### Step 1: Setup service account for Google Sheet API
